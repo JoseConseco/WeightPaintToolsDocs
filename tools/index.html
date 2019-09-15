@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Tools - Weight Paint Tools Documentation</title>
+  <title>Main Tools - Weight Paint Tools Documentation</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -18,7 +18,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Tools";
+    var mkdocs_page_name = "Main Tools";
     var mkdocs_page_input_path = "tools.md";
     var mkdocs_page_url = null;
   </script>
@@ -54,30 +54,52 @@
     <a class="" href="..">Home</a>
 	    </li>
           
+            <li class="toctree-l1">
+		
+    <a class="" href="../draw_weights/">Draw Weights</a>
+	    </li>
+          
             <li class="toctree-l1 current">
 		
-    <a class="current" href="./">Tools</a>
+    <a class="current" href="./">Main Tools</a>
     <ul class="subnav">
             
-    <li class="toctree-l2"><a href="#usage">Usage</a></li>
+    <li class="toctree-l2"><a href="#set-weight">Set Weight</a></li>
     
 
-    <li class="toctree-l2"><a href="#create-group">Create Group</a></li>
+    <li class="toctree-l2"><a href="#fill-vertex-weights-up-to-100">Fill vertex weights up to 100%</a></li>
     
 
-    <li class="toctree-l2"><a href="#edit-group">Edit Group</a></li>
+    <li class="toctree-l2"><a href="#select-active-vertex-group-bone">Select active vertex group bone</a></li>
     
 
-    <li class="toctree-l2"><a href="#addremove-from-group">Add/Remove from Group</a></li>
+    <li class="toctree-l2"><a href="#copy-paste-vertex-weights">Copy / Paste Vertex weights</a></li>
     
 
-    <li class="toctree-l2"><a href="#close-group">Close Group</a></li>
+    <li class="toctree-l2"><a href="#transfer-vertex-weights">Transfer Vertex Weights</a></li>
     
 
-    <li class="toctree-l2"><a href="#dissolve">Dissolve</a></li>
+    <li class="toctree-l2"><a href="#symmetry-offset">Symmetry Offset</a></li>
+    
+
+    <li class="toctree-l2"><a href="#mirror-vertex-groups">Mirror Vertex Group(s)</a></li>
+    
+
+    <li class="toctree-l2"><a href="#mirror-vertex-groups-project">Mirror Vertex Group(s) - Project</a></li>
+    
+
+    <li class="toctree-l2"><a href="#project-weights">Project weights</a></li>
+    
+
+    <li class="toctree-l2"><a href="#override-from-adjacent">Override from adjacent</a></li>
     
 
     </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../weight_tools/">Weight Tools</a>
 	    </li>
           
         </ul>
@@ -102,7 +124,7 @@
     
       
     
-    <li>Tools</li>
+    <li>Main Tools</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -112,29 +134,67 @@
           <div role="main">
             <div class="section">
               
-                <h3 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h3>
-<p>To create new group select objects you want to join, and press Ctrl+X -&gt; 'Create Group'. You will notice selected objects are now merged into one group, and cannot be selected individually. To edit group components you have to open it with 'Edit Group' button.</p>
-<p>After pressing it you will see green box around edited group (color depend on your settings in addon preferences). Any modifications performed on object that are member of group, will be saved after you press 'Close Group' button.</p>
-<p>You can add or remove objects from group, while you have group opened, using Add/Remove from group buttons.
-Note: If you remove all objects from group, while editing it, group will be deleted after pressing 'Close Group' button.</p>
-<h3 id="create-group">Create Group<a class="headerlink" href="#create-group" title="Permanent link">&para;</a></h3>
+                <h3 id="set-weight">Set Weight<a class="headerlink" href="#set-weight" title="Permanent link">&para;</a></h3>
+<p>Set Weight</p>
+<h3 id="fill-vertex-weights-up-to-100">Fill vertex weights up to 100%<a class="headerlink" href="#fill-vertex-weights-up-to-100" title="Permanent link">&para;</a></h3>
 <p><img alt="Create Group" src="./img/group_create.gif" />
 <em>Joins selected objects together into collection instance</em></p>
-<p>Joins selected objects in one, and creating CollectionInstance from them. After using this function you can press F9 to change group name or change group pivot location (median point or 3d cursor location).  </p>
-<h3 id="edit-group">Edit Group<a class="headerlink" href="#edit-group" title="Permanent link">&para;</a></h3>
-<p>You can perform modifications to CollectionInstance, add/remove objects from it, after pressing this button. You will notice green box around objects that are members of group. Also in bottom left corner, there will be info with name of currently edited group name. </p>
-<blockquote>
-<p><strong>NOTE</strong>: Color of edited group can be customized in addon preferences -&gt; View Tab. You can set it to be completely transparent if you want.</p>
-</blockquote>
-<h3 id="addremove-from-group">Add/Remove from Group<a class="headerlink" href="#addremove-from-group" title="Permanent link">&para;</a></h3>
-<p>Add/Remove from Group – while you are in edit group mode you can press those buttons to add/remove selected objects from/to group. Changes will be saved after Close Group.</p>
-<h3 id="close-group">Close Group<a class="headerlink" href="#close-group" title="Permanent link">&para;</a></h3>
-<p><img alt="Create Group" src="./img/group_close.gif" />
-<em>After editing group merges objects back together</em></p>
-<p>Saves changes performed while you were in edit group mode, merges objects back together. </p>
-<h3 id="dissolve">Dissolve<a class="headerlink" href="#dissolve" title="Permanent link">&para;</a></h3>
-<p><img alt="Create Group" src="./img/dissolve.gif" />
-<em>Split Group of objects into separate components</em></p>
+<p>If vertex is not normalized (total sum of vert weights is below 1), then increase active vertex group weight until sum reaches 100% </p>
+<h3 id="select-active-vertex-group-bone">Select active vertex group bone<a class="headerlink" href="#select-active-vertex-group-bone" title="Permanent link">&para;</a></h3>
+<p><img alt="Copy Paste Weights" src="../img/selece_bone_from_vg.gif" />
+<em>On more complicated rigs it may be hard to find bone that influences selected vertices</em>
+Select bone based on current active vertex group</p>
+<h3 id="copy-paste-vertex-weights">Copy / Paste Vertex weights<a class="headerlink" href="#copy-paste-vertex-weights" title="Permanent link">&para;</a></h3>
+<p><img alt="Copy Paste Weights" src="../img/copy_paste_weights.gif" />
+<em>You can copy one vertex weight (from belt), and paste to pouch to make it more rigid (it will have same vertex weight on all vertices)</em>
+Copy all Vertex weights from selection and paste to target vertices. </p>
+<ul>
+<li>you can copy one vertex weights to multiple target vertices (like on gif above)</li>
+<li>if you copy N vertices, then paste to N target vertices, the order of selected vertices weights will be preserved</li>
+</ul>
+<h3 id="transfer-vertex-weights">Transfer Vertex Weights<a class="headerlink" href="#transfer-vertex-weights" title="Permanent link">&para;</a></h3>
+<p><img alt="Transfer Vertex" src="../img/transfer_weights.gif" />
+<em>Transfer weights from eyelid bone to head bone on selected vertices</em>
+Select source bone A - then target bone - B. Weights on selected vertices will be moved from vertex group A to B
+This operator has few properties (F9) key:
+<strong>Mixing Method</strong> of vertex group A with B (target / receiver):</p>
+<ul>
+<li>Replace - Replace weight B with A</li>
+<li>Add - Add A to B</li>
+<li>Lighten - Lighten</li>
+<li>Difference - substract weighs A from B</li>
+<li>Multiply - Multiply A timex B</li>
+</ul>
+<p><strong>Clear Source Weights</strong> - if true remove vertex weights from source vertex group A</p>
+<h3 id="symmetry-offset">Symmetry Offset<a class="headerlink" href="#symmetry-offset" title="Permanent link">&para;</a></h3>
+<p>Define distance tolerance when finding mirrored vertices pairs. Bigger offset makes it easier to find corresponding mirrored vert, but too big value may return vertices that should not be actually considered a pair. The distance can be adjusted with modal '<strong>Define Symmetry Offset</strong>' operator.</p>
+<h3 id="mirror-vertex-groups">Mirror Vertex Group(s)<a class="headerlink" href="#mirror-vertex-groups" title="Permanent link">&para;</a></h3>
+<p><img alt="Mirror Vertex" src="../img/mirror_vg.gif" />
+<em>In this case I want to replace characters left (ours right) clavicle weights, to copy nice gradient from left side</em></p>
+<p>Mirror selected vertices weights to opposite side of mesh. To use it, selecting properly weighted side of mesh, and then run 'Mirror Vertex Groups'. It will mirror correct weight to 'broken' side. The mirroring accuracy is defined by '<strong>Symmetry Offset</strong>' parameter.</p>
+<p><strong>Properties </strong>(F9):</p>
+<ul>
+<li><strong>All Groups</strong> - if True mirror all vertex group from selected vertices (or just active one if set to False)</li>
+<li><strong>Symmetrize</strong> - instead of mirroring vertex group from left bone to right bone, symmetrize vertex group(s). Useful for center bones - eg spine.</li>
+</ul>
+<p><img alt="Mirror Vertex" src="../img/mirror_symmetrize_vg.gif" />
+<em>Symmetrize vs non symmetrize version</em></p>
+<h3 id="mirror-vertex-groups-project">Mirror Vertex Group(s) - Project<a class="headerlink" href="#mirror-vertex-groups-project" title="Permanent link">&para;</a></h3>
+<p><img alt="Mirror Vertex" src="../img/mirror_vg_project.gif" />
+<em>Fixing broken pants. Notice that pants topology is not symmetrical</em>
+Same as 'Mirror Vertex Group' but works great with non symmetrical topology meshes. The main difference in workflow is that you select the 'broken' side of mesh first, then run 'Mirror Project', so it is reverse of how normal 'Mirror Vertex Groups' work (where you select fixed side of mesh first)</p>
+<p><strong>Properties </strong>(F9):</p>
+<ul>
+<li><strong>All Groups</strong> - if True mirror all vertex group to selected vertices (or just active one if set to False)</li>
+<li><strong>Symmetrize</strong> - instead of mirroring vertex group from left bone to right bone, symmetrize vertex group(s). Useful for center bones - eg spine.</li>
+</ul>
+<h3 id="project-weights">Project weights<a class="headerlink" href="#project-weights" title="Permanent link">&para;</a></h3>
+<p><img alt="Create Group" src="../img/project_weights.gif" />
+<em>In this case weights from body are projected to backpack</em></p>
+<p>Project weights from non selected mesh parts to selection</p>
+<h3 id="override-from-adjacent">Override from adjacent<a class="headerlink" href="#override-from-adjacent" title="Permanent link">&para;</a></h3>
+<p><img alt="Create Group" src="../img/override_from_adjacent.gif" />
+Override selected verts weights from adjacent non selected vertices. Helpful in removing broken vertices.</p>
               
             </div>
           </div>
@@ -142,8 +202,10 @@ Note: If you remove all objects from group, while editing it, group will be dele
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="../weight_tools/" class="btn btn-neutral float-right" title="Weight Tools">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+        <a href="../draw_weights/" class="btn btn-neutral" title="Draw Weights"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -169,8 +231,10 @@ Note: If you remove all objects from group, while editing it, group will be dele
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../draw_weights/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
+      
+        <span style="margin-left: 15px"><a href="../weight_tools/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
