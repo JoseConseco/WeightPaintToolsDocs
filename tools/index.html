@@ -56,6 +56,11 @@
           
             <li class="toctree-l1">
 		
+    <a class="" href="../symmetry/">Symmetry</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <a class="" href="../draw_weights/">Draw Weights</a>
 	    </li>
           
@@ -79,13 +84,10 @@
     <li class="toctree-l2"><a href="#transfer-vertex-weights">Transfer Vertex Weights</a></li>
     
 
-    <li class="toctree-l2"><a href="#symmetry-offset">Symmetry Offset</a></li>
+    <li class="toctree-l2"><a href="#mirror-weightss">Mirror Weights(s)</a></li>
     
 
-    <li class="toctree-l2"><a href="#mirror-vertex-groups">Mirror Vertex Group(s)</a></li>
-    
-
-    <li class="toctree-l2"><a href="#mirror-vertex-groups-project">Mirror Vertex Group(s) - Project</a></li>
+    <li class="toctree-l2"><a href="#mirror-project-weights">Mirror Project Weights</a></li>
     
 
     <li class="toctree-l2"><a href="#project-weights">Project weights</a></li>
@@ -166,12 +168,10 @@ This operator has few properties (F9) key:
 <li>Multiply - Multiply A timex B</li>
 </ul>
 <p><strong>Clear Source Weights</strong> - if true remove vertex weights from source vertex group A</p>
-<h3 id="symmetry-offset">Symmetry Offset<a class="headerlink" href="#symmetry-offset" title="Permanent link">&para;</a></h3>
-<p>Define distance tolerance when finding mirrored vertices pairs. Bigger offset makes it easier to find corresponding mirrored vert, but too big value may return vertices that should not be actually considered a pair. The distance can be adjusted with modal '<strong>Define Symmetry Offset</strong>' operator.</p>
-<h3 id="mirror-vertex-groups">Mirror Vertex Group(s)<a class="headerlink" href="#mirror-vertex-groups" title="Permanent link">&para;</a></h3>
+<h3 id="mirror-weightss">Mirror Weights(s)<a class="headerlink" href="#mirror-weightss" title="Permanent link">&para;</a></h3>
 <p><img alt="Mirror Vertex" src="../img/mirror_vg.gif" />
 <em>In this case I want to replace characters left (ours right) clavicle weights, to copy nice gradient from left side</em></p>
-<p>Mirror selected vertices weights to opposite side of mesh. To use it, selecting properly weighted side of mesh, and then run 'Mirror Vertex Groups'. It will mirror correct weight to 'broken' side. The mirroring accuracy is defined by '<strong>Symmetry Offset</strong>' parameter.</p>
+<p>Mirror selected vertices weights to opposite side of mesh. To use it, selecting properly weighted side of mesh, and then run 'Mirror  Weights'. It will mirror correct weight to 'broken' side. The mirroring accuracy is defined by '<strong>Symmetry Search Distance</strong>' parameter.</p>
 <p><strong>Properties </strong>(F9):</p>
 <ul>
 <li><strong>All Groups</strong> - if True mirror all vertex group from selected vertices (or just active one if set to False)</li>
@@ -179,10 +179,10 @@ This operator has few properties (F9) key:
 </ul>
 <p><img alt="Mirror Vertex" src="../img/mirror_symmetrize_vg.gif" />
 <em>Symmetrize vs non symmetrize version</em></p>
-<h3 id="mirror-vertex-groups-project">Mirror Vertex Group(s) - Project<a class="headerlink" href="#mirror-vertex-groups-project" title="Permanent link">&para;</a></h3>
-<p><img alt="Mirror Vertex" src="../img/mirror_vg_project.gif" />
+<h3 id="mirror-project-weights">Mirror Project Weights<a class="headerlink" href="#mirror-project-weights" title="Permanent link">&para;</a></h3>
+<p><img alt="Mirror Project Weights" src="../img/mirror_vg_project.gif" />
 <em>Fixing broken pants. Notice that pants topology is not symmetrical</em>
-Same as 'Mirror Vertex Group' but works great with non symmetrical topology meshes. The main difference in workflow is that you select the 'broken' side of mesh first, then run 'Mirror Project', so it is reverse of how normal 'Mirror Vertex Groups' work (where you select fixed side of mesh first)</p>
+Same as 'Mirror Weights' but works great with non symmetrical topology meshes. The main difference in workflow is that you select the 'broken' side of mesh first, then run 'Mirror Project', so it is reverse of how normal 'Mirror Weights' work (where you select fixed side of mesh first)</p>
 <p><strong>Properties </strong>(F9):</p>
 <ul>
 <li><strong>All Groups</strong> - if True mirror all vertex group to selected vertices (or just active one if set to False)</li>
