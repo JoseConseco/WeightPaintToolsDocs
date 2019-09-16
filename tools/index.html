@@ -72,7 +72,7 @@
     <li class="toctree-l2"><a href="#set-weight">Set Weight</a></li>
     
 
-    <li class="toctree-l2"><a href="#fill-vertex-weights-up-to-100">Fill vertex weights up to 100%</a></li>
+    <li class="toctree-l2"><a href="#fill-vertex-weight">Fill vertex weight</a></li>
     
 
     <li class="toctree-l2"><a href="#select-active-vertex-group-bone">Select active vertex group bone</a></li>
@@ -84,7 +84,7 @@
     <li class="toctree-l2"><a href="#transfer-vertex-weights">Transfer Vertex Weights</a></li>
     
 
-    <li class="toctree-l2"><a href="#mirror-weightss">Mirror Weights(s)</a></li>
+    <li class="toctree-l2"><a href="#mirror-weights">Mirror Weights</a></li>
     
 
     <li class="toctree-l2"><a href="#mirror-project-weights">Mirror Project Weights</a></li>
@@ -102,6 +102,11 @@
             <li class="toctree-l1">
 		
     <a class="" href="../weight_tools/">Weight Tools</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../hotkeys/">Hotkeys</a>
 	    </li>
           
         </ul>
@@ -137,18 +142,29 @@
             <div class="section">
               
                 <h3 id="set-weight">Set Weight<a class="headerlink" href="#set-weight" title="Permanent link">&para;</a></h3>
-<p>Set Weight</p>
-<h3 id="fill-vertex-weights-up-to-100">Fill vertex weights up to 100%<a class="headerlink" href="#fill-vertex-weights-up-to-100" title="Permanent link">&para;</a></h3>
-<p><img alt="Create Group" src="./img/group_create.gif" />
-<em>Joins selected objects together into collection instance</em></p>
-<p>If vertex is not normalized (total sum of vert weights is below 1), then increase active vertex group weight until sum reaches 100% </p>
+<p><img alt="Create Group" src="../img/set_weight.gif" />
+Set Weight - is modal operator that lets you adjust selected vertices weights.
+Set active vertex group weight to one of values: <strong>0,  0.2, 0.5, 0.8, 1</strong>. Then you can increase or decrease weights by +/- 0.1 by scrolling up or down with middle mouse button.<br />
+There are three mixing modes (changed by pressing 'M' key):</p>
+<ul>
+<li><strong>Replace</strong> - replaces existing weighs with new target value.</li>
+<li><strong>Add</strong> - add weight to old one</li>
+<li><strong>Subtract</strong> - remove weight from old one</li>
+</ul>
+<p>You may also choose to normalize resulting weights (with 'N' key). </p>
+<p><img alt="Create Group" src="../img/pick_weight.gif" />
+<em><strong>Pick weight</strong> helper button - copies active vertex group weight (<b>0.607</b>) from vertex. Now you can use icon on right, to fill selected vertices with this <b>0.607</b> weight</em></p>
+<h3 id="fill-vertex-weight">Fill vertex weight<a class="headerlink" href="#fill-vertex-weight" title="Permanent link">&para;</a></h3>
+<p><img alt="Create Group" src="../img/fill_weights.gif" />
+<em>Filling dark spots (low vertex weights) with head bone weight, to pin hair to head</em></p>
+<p>If vertex weight is low (total sum of vert weights is below 1), then increase active vertex group weight until sum reaches 100% </p>
 <h3 id="select-active-vertex-group-bone">Select active vertex group bone<a class="headerlink" href="#select-active-vertex-group-bone" title="Permanent link">&para;</a></h3>
 <p><img alt="Copy Paste Weights" src="../img/selece_bone_from_vg.gif" />
 <em>On more complicated rigs it may be hard to find bone that influences selected vertices</em>
 Select bone based on current active vertex group</p>
 <h3 id="copy-paste-vertex-weights">Copy / Paste Vertex weights<a class="headerlink" href="#copy-paste-vertex-weights" title="Permanent link">&para;</a></h3>
 <p><img alt="Copy Paste Weights" src="../img/copy_paste_weights.gif" />
-<em>You can copy one vertex weight (from belt), and paste to pouch to make it more rigid (it will have same vertex weight on all vertices)</em>
+<em>You can copy one vertex weight (from belt), and paste to pouch to make it more rigid (it will have same vertex weights on all vertices)</em>
 Copy all Vertex weights from selection and paste to target vertices. </p>
 <ul>
 <li>you can copy one vertex weights to multiple target vertices (like on gif above)</li>
@@ -158,8 +174,8 @@ Copy all Vertex weights from selection and paste to target vertices. </p>
 <p><img alt="Transfer Vertex" src="../img/transfer_weights.gif" />
 <em>Transfer weights from eyelid bone to head bone on selected vertices</em>
 Select source bone A - then target bone - B. Weights on selected vertices will be moved from vertex group A to B
-This operator has few properties (F9) key:
-<strong>Mixing Method</strong> of vertex group A with B (target / receiver):</p>
+This operator has few properties (F9) key:</p>
+<p><strong>Mixing Method</strong> of vertex group A with B (target / receiver):</p>
 <ul>
 <li>Replace - Replace weight B with A</li>
 <li>Add - Add A to B</li>
@@ -168,10 +184,10 @@ This operator has few properties (F9) key:
 <li>Multiply - Multiply A timex B</li>
 </ul>
 <p><strong>Clear Source Weights</strong> - if true remove vertex weights from source vertex group A</p>
-<h3 id="mirror-weightss">Mirror Weights(s)<a class="headerlink" href="#mirror-weightss" title="Permanent link">&para;</a></h3>
+<h3 id="mirror-weights">Mirror Weights<a class="headerlink" href="#mirror-weights" title="Permanent link">&para;</a></h3>
 <p><img alt="Mirror Vertex" src="../img/mirror_vg.gif" />
-<em>In this case I want to replace characters left (ours right) clavicle weights, to copy nice gradient from left side</em></p>
-<p>Mirror selected vertices weights to opposite side of mesh. To use it, selecting properly weighted side of mesh, and then run 'Mirror  Weights'. It will mirror correct weight to 'broken' side. The mirroring accuracy is defined by '<strong>Symmetry Search Distance</strong>' parameter.</p>
+<em>I want to fix characters weights on right side, so I copy nice gradients from left side</em></p>
+<p>Mirror selected vertices weights to opposite side of mesh. To use it, select properly weighted side of mesh, and then run 'Mirror Weights'. The mirroring accuracy is defined by <a href="../symmetry/#symmetry-search-distance">'<strong>Symmetry Search Distance</strong>'</a> parameter.</p>
 <p><strong>Properties </strong>(F9):</p>
 <ul>
 <li><strong>All Groups</strong> - if True mirror all vertex group from selected vertices (or just active one if set to False)</li>
