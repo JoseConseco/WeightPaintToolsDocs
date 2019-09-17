@@ -66,7 +66,7 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="../tools/">Main Tools</a>
+    <a class="" href="../main_pie/">Main Pie</a>
 	    </li>
           
             <li class="toctree-l1 current">
@@ -89,7 +89,7 @@
     <li class="toctree-l2"><a href="#clean-vertex-groups">Clean Vertex Groups</a></li>
     
 
-    <li class="toctree-l2"><a href="#limit-number-of-weights-per-vertex">Limit number of Weights per Vertex</a></li>
+    <li class="toctree-l2"><a href="#limit-total">Limit Total</a></li>
     
 
     </ul>
@@ -132,12 +132,37 @@
           <div role="main">
             <div class="section">
               
-                <h3 id="normalize-all">Normalize (All)<a class="headerlink" href="#normalize-all" title="Permanent link">&para;</a></h3>
+                <p>Most of those tools support symmetry and normalization.<br />
+To disable mirroring on any of those tools - disable global <a href="../symmetry/">'<strong>Mirroring</strong>'</a> checkbox</p>
+<h3 id="normalize-all">Normalize (All)<a class="headerlink" href="#normalize-all" title="Permanent link">&para;</a></h3>
+<p>Same as build in blender Normalize(All), but works with symmetry (it will normalize selected vertices and corresponding symmetrical vertices on other side of mesh - even if only one side is selected).</p>
 <h3 id="draw-gradient">Draw Gradient<a class="headerlink" href="#draw-gradient" title="Permanent link">&para;</a></h3>
+<p><img alt="Draw_gradient" src="../img/draw_gradient.gif" />
+<em>Drawing gradient executed from 'CTRL + D' hotkey</em>
+You can draw weight gradient for active vertex group. Similar gradient will be applied to symmetrical vertex group if global 'Mirroring' is enabled<br />
+<strong>Blend Modes</strong>:</p>
+<ul>
+<li>Replace - Replace existing weights with gradient</li>
+<li>Add - add gradient to existing weights</li>
+<li>Substract - substract gradient from existing weighs</li>
+</ul>
+<p><strong>Gradient Type</strong>:</p>
+<ul>
+<li>Gaussian - smooth gradient</li>
+<li>Ease in/out - sharper transition</li>
+</ul>
+<p><strong>Gradient falloff</strong> - move gradient weights more toward the beginning or end of line.</p>
 <h3 id="smooth-weights">Smooth Weights<a class="headerlink" href="#smooth-weights" title="Permanent link">&para;</a></h3>
+<p>Same as build in Blender Smooth weights, but it is modal, works with symmetry and have option for Normalization of result.</p>
 <h3 id="level-weights">Level Weights<a class="headerlink" href="#level-weights" title="Permanent link">&para;</a></h3>
+<p><img alt="Draw_gradient" src="../img/weights_levels.gif" />
+<em>Increasing contrast on jaw bone, with 'Levels Weights'</em></p>
+<p>Same as build in Blender Level weights, but it is modal, works with symmetry and have option for Normalization of result.
+You can adjust weight offset and gain with MMB Scroll and Shift + MMB Scroll respectively.</p>
 <h3 id="clean-vertex-groups">Clean Vertex Groups<a class="headerlink" href="#clean-vertex-groups" title="Permanent link">&para;</a></h3>
-<h3 id="limit-number-of-weights-per-vertex">Limit number of Weights per Vertex<a class="headerlink" href="#limit-number-of-weights-per-vertex" title="Permanent link">&para;</a></h3>
+<p>Same as Blender's Clean Vertex groups - remove vertex groups from vertex if its weight is below threshold (its here for convenience)</p>
+<h3 id="limit-total">Limit Total<a class="headerlink" href="#limit-total" title="Permanent link">&para;</a></h3>
+<p>Same as Blender's <strong>Limit Total</strong> - Limit number of Weights per Vertex (its here for convenience)</p>
               
             </div>
           </div>
@@ -148,7 +173,7 @@
         <a href="../hotkeys/" class="btn btn-neutral float-right" title="Hotkeys">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../tools/" class="btn btn-neutral" title="Main Tools"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../main_pie/" class="btn btn-neutral" title="Main Pie"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -174,7 +199,7 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../tools/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../main_pie/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../hotkeys/" style="color: #fcfcfc">Next &raquo;</a></span>

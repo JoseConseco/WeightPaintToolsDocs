@@ -75,7 +75,7 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="../tools/">Main Tools</a>
+    <a class="" href="../main_pie/">Main Pie</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -120,17 +120,21 @@
           <div role="main">
             <div class="section">
               
-                <p>Most of the operators in Weight Paint Tools are working with symmetry, which can be enabled globally in ctrl+X pie menu:
+                <p>Most of the operators in Weight Paint Tools (WPT) are working with symmetry, which can be enabled globally in ctrl+X pie menu:
 <img alt="Mirroring" src="../img/wpt_mirroring.jpg" /></p>
+<ul>
+<li>When you work with WPT on one side of mesh eg. on left '<strong>vert_group.l</strong>', the right '<strong>vert_group.r</strong>' weights will be adjusted too automatically,</li>
+<li>If you work on bones that are placed in the middle like spine bones, the addon will symmetrize both sides of mesh.</li>
+</ul>
 <h3 id="symmetry-search-distance">Symmetry Search Distance<a class="headerlink" href="#symmetry-search-distance" title="Permanent link">&para;</a></h3>
 <p><img alt="Mirror Vertex" src="../img/search_distance.gif" />
-<em>Increasing symmetry search distance (red circles) gives more vertices pairs, but with too big value, at the very end, the result is worsening</em>
-Set search distance for finding mirrored vertices pairs. Bigger search distance makes it easier to find corresponding mirrored vert, but too big value may return vertices that should not be actually considered a pair. The distance can be adjusted with modal '<strong>Symmetry Search Distance</strong>' operator - visible on image above.</p>
+<em>Increasing symmetry search distance (red circles) gives more vertices pairs, but with too big value, the result is worsening</em>
+Set search distance for finding mirrored vertices pairs. Bigger search distance makes it easier to find corresponding mirrored vertices, but too big value may return vertices that should not be actually considered a pair. The distance can be adjusted with modal '<strong>Symmetry Search Distance</strong>' operator - visible on image above.</p>
 <h3 id="fixing-symmetry">Fixing symmetry<a class="headerlink" href="#fixing-symmetry" title="Permanent link">&para;</a></h3>
 <p>To manually symmetrize selected vertices you can use:</p>
 <ul>
-<li><a href="../tools/#mirror-weights">Mirror Weights</a> - when you topology is symmetrical</li>
-<li><a href="../tools/#mirror-project-weights">Mirror Project Weights</a> - when topology is not symmetrical</li>
+<li><a href="../main_pie/#mirror-weights">Mirror Weights</a> - when you topology is mostly symmetrical (with small differences between left and right side)</li>
+<li><a href="../main_pie/#mirror-project-weights">Mirror Project Weights</a> - when topology is not symmetrical</li>
 </ul>
               
             </div>
