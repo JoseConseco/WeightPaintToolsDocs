@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Weight Tools - Weight Paint Tools Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Weight Tools";
+        var mkdocs_page_input_path = "weight_tools.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Weight Paint Tools Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../symmetry/">Symmetry</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../draw_weights/">Draw Weights</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../main_pie/">Main Pie</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Weight Tools</a>
+    <ul class="current">
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../hotkeys/">Hotkeys</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Weight Paint Tools Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Weight Tools</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <p>Most of those tools support symmetry and normalization.<br />
+To disable mirroring on any of those tools - disable global <a href="../symmetry/">'<strong>Mirroring</strong>'</a> checkbox.</p>
+<p><img alt="Weight Tools" src="../img/tools_sub_pie.jpg" />
+<em><strong>Weight Tools</strong> sub pie menu</em></p>
+<h3 id="normalize-all">Normalize All<a class="headerlink" href="#normalize-all" title="Permanent link">&para;</a></h3>
+<p>Similar to build-in Blender Normalize(All), but works with symmetry (it will normalize selected vertices and corresponding symmetrical vertices on other side of mesh - even if only one side is selected).</p>
+<h3 id="draw-gradient">Draw Gradient<a class="headerlink" href="#draw-gradient" title="Permanent link">&para;</a></h3>
+<p><img alt="Draw_gradient" src="../img/draw_gradient.gif" />
+<em>Drawing gradient executed from 'CTRL + D' hotkey</em>
+You can draw weight gradient for active vertex group. Similar gradient will be applied to symmetrical vertex group if global 'Mirroring' is enabled<br />
+<strong>Blend Modes</strong>:</p>
+<ul>
+<li>Replace - Replace existing weights with gradient</li>
+<li>Add - add gradient to existing weights</li>
+<li>Substract - substract gradient from existing weighs</li>
+</ul>
+<p><strong>Gradient Type</strong>:</p>
+<ul>
+<li>Gaussian - smooth gradient</li>
+<li>Ease in/out - sharper transition</li>
+</ul>
+<p><strong>Gradient falloff</strong> - move gradient weights more toward the beginning or end of line.</p>
+<h3 id="smooth-weights">Smooth Weights<a class="headerlink" href="#smooth-weights" title="Permanent link">&para;</a></h3>
+<p>Same as build in Blender Smooth weights, but it is modal, works with symmetry and have option for Normalization of result.</p>
+<h3 id="level-weights">Level Weights<a class="headerlink" href="#level-weights" title="Permanent link">&para;</a></h3>
+<p><img alt="Draw_gradient" src="../img/weights_levels.gif" />
+<em>Increasing contrast on jaw bone, with 'Levels Weights'</em></p>
+<p>Same as build in Blender Level weights, but it is modal, works with symmetry and have option for Normalization of result.
+You can adjust weight offset and gain with MMB Scroll and Shift + MMB Scroll respectively.</p>
+<h3 id="clean-vertex-groups">Clean Vertex Groups<a class="headerlink" href="#clean-vertex-groups" title="Permanent link">&para;</a></h3>
+<p>Same as Blender's Clean Vertex groups - remove vertex groups from vertex if its weight is below threshold (its here for convenience)</p>
+<h3 id="limit-total">Limit Total<a class="headerlink" href="#limit-total" title="Permanent link">&para;</a></h3>
+<p>Same as Blender's <strong>Limit Total</strong> - Limit number of Weights per Vertex (its here for convenience)</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../main_pie/" class="btn btn-neutral float-left" title="Main Pie"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../hotkeys/" class="btn btn-neutral float-right" title="Hotkeys">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../main_pie/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../hotkeys/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

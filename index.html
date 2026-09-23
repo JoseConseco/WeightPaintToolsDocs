@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="None" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>Weight Paint Tools Documentation</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Home";
+        var mkdocs_page_input_path = "index.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="." class="icon icon-home"> Weight Paint Tools Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href=".">Home</a>
+    <ul class="current">
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="symmetry/">Symmetry</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="draw_weights/">Draw Weights</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="main_pie/">Main Pie</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="weight_tools/">Weight Tools</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="hotkeys/">Hotkeys</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href=".">Weight Paint Tools Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Home</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h3 id="weight-paint-tools"><a href="https://gumroad.com/l/weight_paint_tools">Weight Paint Tools</a><a class="headerlink" href="#weight-paint-tools" title="Permanent link">&para;</a></h3>
+<p><img alt="Weight Paint Tools Menu" src="img/wpt_pie.jpg" /></p>
+<p>Addon for blender containing tools for simplifying workflow in blender weight paint mode. Useful for riggers, animators and character artist but not only.</p>
+<ul>
+<li>convenient pie menu for <a href="main_pie#set-weight">applying weights</a> to vertices - with properly working symmetry and auto normalization</li>
+<li>custom weights mirroring for all tools,  works even if topology is not symmetrical.</li>
+<li><a href="main_pie#mirror-project-weights">symmetrize</a> vertex groups that works even if topology is not symmetrical</li>
+<li>easy picking/copying vertex weights, from multiple selected vertices.</li>
+<li><a href="main_pie#transfer-vertex-weights">Transfer vertex weights</a> - add, replace, multiply weights from one bone to another</li>
+<li>improved smoothing, level weights - with properly working symmetry and auto normalization</li>
+<li><a href="weight_tools#draw-gradient">Draw gradient</a> with custom gradient falloffs (Ease, linear, Gaussian), and mirroring.</li>
+<li><a href="main_pie#override-from-adjacent">Override from adjacent</a>- replace broken weights on selected vertices from adjacent geometry.</li>
+<li><a href="main_pie#project-weights">Project weights</a> - Project weights from non selected mesh parts to selection</li>
+</ul>
+<h3 id="video-tutorial">Video Tutorial<a class="headerlink" href="#video-tutorial" title="Permanent link">&para;</a></h3>
+<p>For blender 2.79 but lots of things are the same in Blender2.8</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lpVFV7YSLgo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h4 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h4>
+<p>To install Weight Paint Tools you need zip file from your <a href="https://gumroad.com/">Gumroad</a> account.<br />
+Then, inside Blender, go to:</p>
+<ul>
+<li>Edit -&gt; Preferences -&gt; Add-ons, and click '<strong>Install</strong>' button. </li>
+</ul>
+<p><img alt="Weight Paint Tools Installation" src="img/wpt_install.jpg" /></p>
+<p>And navigate to <strong>Weight Paint Tools_2.x.zip</strong> (for Blender 2.8) file location.</p>
+<h4 id="updating">Updating<a class="headerlink" href="#updating" title="Permanent link">&para;</a></h4>
+<p>Weight Paint Tools has build in auto updater. When you use it, updater will download latest Weight Paint Tools release and install in background. To use auto updater go to:</p>
+<ul>
+<li>Edit -&gt; Preferences -&gt; Add-ons -&gt; Weight Paint Tools -&gt;  press 'Check for update'. </li>
+</ul>
+<p><img alt="Weight Paint Tools Update" src="img/wpt_update.jpg" />
+If new version is found, press '<strong>Update addon</strong>' button, wait few seconds for download, installation and restart blender. Or you download update manually by getting new zip file from your <a href="https://gumroad.com/">Gumroad</a> account. You should have received download link to zip file, with email when you purchased Weight Paint Tools.</p>
+<h3 id="location">Location<a class="headerlink" href="#location" title="Permanent link">&para;</a></h3>
+<p>Weight Paint Tools pie menu in Weight Paint Mode:</p>
+<ul>
+<li>'<strong>Ctrl+X</strong>' hotkey (can be changed in addon preferences).  </li>
+</ul>
+<h4 id="support">Support<a class="headerlink" href="#support" title="Permanent link">&para;</a></h4>
+<p><strong>For support or bug reports use <a href="https://discord.gg/cxZDbqH">this discord server</a></strong>.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="symmetry/" class="btn btn-neutral float-right" title="Symmetry">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+      <span><a href="symmetry/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme_extra.js" defer></script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.4.2
+Build Date UTC : 2023-03-19 18:50:28.638209+00:00
+-->
