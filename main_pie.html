@@ -4,12 +4,12 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="shortcut icon" href="../img/favicon.ico" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
     <title>Main Pie - Weight Paint Tools Documentation</title>
-    <link rel="stylesheet" href="../css/theme.css" />
-    <link rel="stylesheet" href="../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
-        <link href="../extra.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="extra.css" rel="stylesheet" />
     
       <script>
         // Current page data
@@ -18,12 +18,11 @@
         var mkdocs_page_url = null;
       </script>
     
-    <script src="../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
-      <script src="../js/html5shiv.min.js"></script>
+      <script src="js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -32,39 +31,59 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-          <a href=".." class="icon icon-home"> Weight Paint Tools Documentation
+          <a href="index.html" class="icon icon-home"> Weight Paint Tools Documentation
         </a><div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                <li class="toctree-l1"><a class="reference internal" href="index.html">Home</a>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../symmetry/">Symmetry</a>
+                <li class="toctree-l1"><a class="reference internal" href="symmetry.html">Symmetry</a>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../draw_weights/">Draw Weights</a>
+                <li class="toctree-l1"><a class="reference internal" href="draw_weights.html">Draw Weights</a>
                 </li>
               </ul>
               <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="./">Main Pie</a>
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Main Pie</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#set-weight">Set Weight</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fill-vertex-weight">Fill vertex weight</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#select-active-vertex-group-bone">Select active vertex group bone</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#copy-paste-vertex-weights">Copy / Paste Vertex weights</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#transfer-vertex-weights">Transfer Vertex Weights</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#mirror-weights">Mirror Weights</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#mirror-project-weights">Mirror Project Weights</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#project-weights">Project weights</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#override-from-adjacent">Override from adjacent</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#voxel-skinning">Voxel Skinning</a>
+    </li>
     </ul>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../weight_tools/">Weight Tools</a>
+                <li class="toctree-l1"><a class="reference internal" href="weight_tools.html">Weight Tools</a>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../hotkeys/">Hotkeys</a>
+                <li class="toctree-l1"><a class="reference internal" href="hotkeys.html">Hotkeys</a>
                 </li>
               </ul>
       </div>
@@ -74,14 +93,14 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
       <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="..">Weight Paint Tools Documentation</a>
+          <a href="index.html">Weight Paint Tools Documentation</a>
         
       </nav>
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-      <li>Main Pie</li>
+    <li><a href="index.html" class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Main Pie</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -90,8 +109,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h3 id="set-weight">Set Weight<a class="headerlink" href="#set-weight" title="Permanent link">&para;</a></h3>
-<p><img alt="Create Group" src="../img/set_weight.gif" />
+                <h2 id="main-tools">Main Tools<a class="headerlink" href="#main-tools" title="Permanent link">&para;</a></h2>
+<h3 id="set-weight">Set Weight<a class="headerlink" href="#set-weight" title="Permanent link">&para;</a></h3>
+<p><img alt="Create Group" src="img/set_weight.gif" />
 Set Weight - is modal operator that lets you adjust selected vertices weights.
 Set active vertex group weight to one of values: <strong>0,  0.2, 0.5, 0.8, 1</strong>. Then you can increase or decrease weights by +/- 0.1 by scrolling up or down with middle mouse button.
 There are three mixing modes (changed by pressing 'M' key):</p>
@@ -101,18 +121,18 @@ There are three mixing modes (changed by pressing 'M' key):</p>
 <li><strong>Subtract</strong> - remove weight from old one</li>
 </ul>
 <p>You may also choose to normalize resulting weights (with 'N' key).</p>
-<p><img alt="Create Group" src="../img/pick_weight.gif" />
+<p><img alt="Create Group" src="img/pick_weight.gif" />
 <em><strong>Pick weight</strong> helper button - copies active vertex group weight (<b>0.607</b>) from vertex. Now you can use icon on right, to fill selected vertices with this <b>0.607</b> weight</em></p>
 <h3 id="fill-vertex-weight">Fill vertex weight<a class="headerlink" href="#fill-vertex-weight" title="Permanent link">&para;</a></h3>
-<p><img alt="Create Group" src="../img/fill_weights.gif" />
+<p><img alt="Create Group" src="img/fill_weights.gif" />
 <em>Filling dark spots (low vertex weights) with head bone weight, to pin hair to head</em></p>
 <p>If vertex weight is low (total sum of vert weights is below 1), then increase active vertex group weight until sum reaches 100%</p>
 <h3 id="select-active-vertex-group-bone">Select active vertex group bone<a class="headerlink" href="#select-active-vertex-group-bone" title="Permanent link">&para;</a></h3>
-<p><img alt="Copy Paste Weights" src="../img/selece_bone_from_vg.gif" />
+<p><img alt="Copy Paste Weights" src="img/selece_bone_from_vg.gif" />
 <em>On more complicated rigs it may be hard to find bone that influences selected vertices</em>
 Select bone based on current active vertex group</p>
 <h3 id="copy-paste-vertex-weights">Copy / Paste Vertex weights<a class="headerlink" href="#copy-paste-vertex-weights" title="Permanent link">&para;</a></h3>
-<p><img alt="Copy Paste Weights" src="../img/copy_paste_weights.gif" />
+<p><img alt="Copy Paste Weights" src="img/copy_paste_weights.gif" />
 <em>You can copy one vertex weight (from belt), and paste to pouch to make it more rigid (it will have same vertex weights on all vertices)</em>
 Copy all Vertex weights from selection and paste to target vertices.</p>
 <ul>
@@ -120,7 +140,7 @@ Copy all Vertex weights from selection and paste to target vertices.</p>
 <li>if you copy N vertices, then paste to N target vertices, the order of selected vertices weights will be preserved</li>
 </ul>
 <h3 id="transfer-vertex-weights">Transfer Vertex Weights<a class="headerlink" href="#transfer-vertex-weights" title="Permanent link">&para;</a></h3>
-<p><img alt="Transfer Vertex" src="../img/transfer_weights.gif" />
+<p><img alt="Transfer Vertex" src="img/transfer_weights.gif" />
 <em>Transfer weights from eyelid bone to head bone on selected vertices</em>
 Select source bone A - then target bone - B. Weights on selected vertices will be moved from vertex group A to B
 This operator has few properties (F9) key:</p>
@@ -146,7 +166,7 @@ Your browser does not support the video tag.
 <li>select 'source' side of mesh (usually with correct weights),</li>
 <li>run 'Mirror Weights' from Ctrl+X pie menu.</li>
 </ul>
-<p>Pairing range of mirrored verts is defined by <a href="../symmetry/#symmetry-search-distance">'<strong>Symmetry Search Distance</strong>'</a> parameter. Bigger value will make it easier to find mirrored vert.</p>
+<p>Pairing range of mirrored verts is defined by <a href="symmetry.html#symmetry-search-distance">'<strong>Symmetry Search Distance</strong>'</a> parameter. Bigger value will make it easier to find mirrored vert.</p>
 <p><strong>Properties </strong>(F9):</p>
 <video style="width:100%" controls>
 <source src="../video/mirror_sym.webm" type="video/mp4">
@@ -168,7 +188,7 @@ Your browser does not support the video tag.
 </ul>
 <p><strong>Automatically pick sampling side</strong> - if you select bone or verts on right side, then weights from right will be mirrored to left (and vice versa). Disable it to manually pick if sampling should be done from Left or Right side of character.</p>
 <h3 id="mirror-project-weights">Mirror Project Weights<a class="headerlink" href="#mirror-project-weights" title="Permanent link">&para;</a></h3>
-<p><img alt="Mirror Project Weights" src="../img/mirror_vg_project.gif" />
+<p><img alt="Mirror Project Weights" src="img/mirror_vg_project.gif" />
 <em>Fixing broken pants. Notice that pants topology is not symmetrical</em>
 Same as 'Mirror Weights' but works great with non symmetrical topology meshes. The main difference in workflow is that you select the 'broken' side of mesh first, then run 'Mirror Project', so it is reverse of how normal 'Mirror Weights' work (where you select fixed side of mesh first)</p>
 <p><strong>Properties </strong>(F9):</p>
@@ -177,18 +197,67 @@ Same as 'Mirror Weights' but works great with non symmetrical topology meshes. T
 <li><strong>Symmetrize</strong> - instead of mirroring vertex group from left bone to right bone, symmetrize vertex group(s). Useful for center bones - eg spine.</li>
 </ul>
 <h3 id="project-weights">Project weights<a class="headerlink" href="#project-weights" title="Permanent link">&para;</a></h3>
-<p><img alt="Create Group" src="../img/project_weights.gif" />
+<p><img alt="Create Group" src="img/project_weights.gif" />
 <em>In this case weights from body are projected to backpack</em></p>
 <p>Project weights from non selected mesh parts to selection</p>
 <h3 id="override-from-adjacent">Override from adjacent<a class="headerlink" href="#override-from-adjacent" title="Permanent link">&para;</a></h3>
-<p><img alt="Create Group" src="../img/override_from_adjacent.gif" />
+<p><img alt="Create Group" src="img/override_from_adjacent.gif" />
 Override selected verts weights from adjacent non selected vertices. Helpful in removing broken vertices.</p>
+<h3 id="voxel-skinning">Voxel Skinning<a class="headerlink" href="#voxel-skinning" title="Permanent link">&para;</a></h3>
+<p>Voxel skinning is an alternative way of weight generation — it can help with fixing weight bleed between close or touching body parts (like fingers, armpits, or overlapping limbs) by using volumetric heat diffusion instead of surface distance, giving cleaner, more accurate deformations on layered or non-manifold meshes.</p>
+<video style="width:100%" controls>
+<source src="../video/voxel_skining.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+<p><em>First result of default - built-in Blender automatic skinning. Then Voxel skining - notice smoother result and continuous weights distribution on border shirt to pants transition</em></p>
+<p><a href="https://youtu.be/3UinVUC-uko">Demo Video</a> - on Youtube</p>
+<ul>
+<li><strong>Armature</strong> — Target armature object to skin from.</li>
+<li><strong>Bones</strong> — Source of bones to include in skinning:<ul>
+<li><strong>All Deform Bones</strong> — Use all deform bones in the armature.</li>
+<li><strong>Selected Pose Bones</strong> — Use bones currently selected in Pose Mode.</li>
+<li><strong>Bone Collection</strong> — Filter bones by Bone Collection.</li>
+</ul>
+</li>
+<li><strong>Affect Selection Only</strong> — Only skin selected mesh vertices (uses Weight Paint mask).</li>
+</ul>
+<video style="width:100%" controls>
+<source src="../video/voxel_skining_selected.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+<p><em>Demo of skining with higher voxel resolution on selected mesh part - hands. Its cheap way to get more detail in selected places, without having to add more voxels to whole character (which would be very slow - 2x resolution results in 8x more compute time)</em></p>
+<p><strong>Bone Radius</strong></p>
+<p>The bigger the bone radius, the more heat is spread out - resulting in smoother weights transitions.</p>
+<ul>
+<li><strong>Bone Radius Mode</strong> — Method used to determine bone influence radius:<ul>
+<li><strong>Auto: Measure Mesh</strong> — Measures physical mesh thickness to estimate bone influence range.</li>
+<li><strong>Read from Bones</strong> — Reads <code>head_radius</code> and <code>tail_radius</code> directly from armature bones.</li>
+<li><strong>From Bone Length</strong> — Calculates radius from bone length multiplied by a factor.</li>
+<li><strong>Fixed</strong> — Uses same fixed lateral bone range based on voxel size.</li>
+</ul>
+</li>
+<li><strong>Radius Multiplier</strong> — Multiplier applied to measured bone radius. Increases range of bone heat generation thus its weights — results in smoother transitions.</li>
+<li><strong>Write Radii to Bones</strong> — Write the computed joint radii into armature bone envelopes (<code>head_radius</code> and <code>tail_radius</code>).</li>
+<li><strong>Adjacent Bone Blending</strong> — Fraction of bone length that bleeds into adjacent bones at joints — results in smooth bending at elbows/knees.</li>
+</ul>
+<p><strong>Voxelization</strong></p>
+<ul>
+<li><strong>Grid Resolution</strong> — Voxels along the longest dimension (16–1024, default 100). Higher = more detail, slower computation.</li>
+<li><strong>Voxel Padding</strong> — Number of voxels added on boundary surface — can help to cover outer parts of mesh (0–4).</li>
+<li><strong>Smooth Iterations</strong> — Number of 3D voxel smoothing passes across solid neighbors.</li>
+<li><strong>Smooth Factor</strong> — Strength of in-memory 3D voxel-space weight diffusion per pass (0.0–1.0).</li>
+<li><strong>Max Influences</strong> — Maximum number of bones affecting each vertex (1–8, default 6).</li>
+</ul>
+<p><strong>Debug</strong></p>
+<ul>
+<li><strong>Show Debug Mesh</strong> — Display the internal voxel point cloud with raw weight attributes.</li>
+</ul>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../draw_weights/" class="btn btn-neutral float-left" title="Draw Weights"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../weight_tools/" class="btn btn-neutral float-right" title="Weight Tools">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="draw_weights.html" class="btn btn-neutral float-left" title="Draw Weights"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="weight_tools.html" class="btn btn-neutral float-right" title="Weight Tools">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -211,21 +280,22 @@ Override selected verts weights from adjacent non selected vertices. Helpful in 
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../draw_weights/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="draw_weights.html" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../weight_tools/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="weight_tools.html" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
-    <script>var base_url = '..';</script>
-    <script src="../js/theme_extra.js" defer></script>
-    <script src="../js/theme.js" defer></script>
-      <script src="../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+      <script src="search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
-        };
+        });
     </script>
 
 </body>
