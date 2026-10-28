@@ -69,7 +69,7 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#mirror-project-weights">Mirror Project Weights</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#project-weights">Project weights</a>
+    <li class="toctree-l2"><a class="reference internal" href="#sample-weights">Sample weights</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#override-from-adjacent">Override from adjacent</a>
     </li>
@@ -196,10 +196,52 @@ Same as 'Mirror Weights' but works great with non symmetrical topology meshes. T
 <li><strong>All Groups</strong> - if True mirror all vertex group to selected vertices (or just active one if set to False)</li>
 <li><strong>Symmetrize</strong> - instead of mirroring vertex group from left bone to right bone, symmetrize vertex group(s). Useful for center bones - eg spine.</li>
 </ul>
-<h3 id="project-weights">Project weights<a class="headerlink" href="#project-weights" title="Permanent link">&para;</a></h3>
+<h3 id="sample-weights">Sample weights<a class="headerlink" href="#sample-weights" title="Permanent link">&para;</a></h3>
 <p><img alt="Create Group" src="img/project_weights.gif" />
-<em>In this case weights from body are projected to backpack</em></p>
-<p>Project weights from non selected mesh parts to selection</p>
+<em>In this case weights from body are sampled to backpack</em></p>
+<p>Samples weights to the selected vertices. Select the vertices that should receive weights, then pick the source in the pie menu:</p>
+<ul>
+<li><strong>from: Active Object</strong> - samples from the non selected (and visible) parts of the same mesh. Useful for parts that are merged into the body mesh but are separate islands (backpack, armor plate).</li>
+<li><strong>from: Target Object</strong> - samples from another mesh object, for example a body mesh to a garment (a sweater, a backpack). Select character body then garment then go to Weight Paint mode &gt; Ctrl + X &gt; Sample Weights.</li>
+</ul>
+<p><strong>Properties</strong></p>
+<ul>
+<li><strong>Source Object</strong> - (from: Target Object only) mesh to sample weights from.</li>
+<li><strong>Blend Curve</strong> - adjust transition between the <strong>Near</strong> values (vertices touching the source surface) and the <strong>Far</strong> values (the furthest vertices of the garment). 0 is linear, higher values reach the Far values sooner.</li>
+<li>
+<p><strong>Show Distance Mask</strong>
+<img alt="Distance Mask Overlay" src="img/distance_mask.jpg" />
+<em>Blue regions will use <code>Near</code> distance mask, red - <code>Far</code> values</em></p>
+</li>
+<li>
+<p><strong>Multiple Samples</strong> (off by default) - instead of one exact sample, casts <strong>Rays</strong> (default 12) from the vertex to points around the closest surface point and averages the weights found on the source surface (interpolated over the faces, so it also works with low poly sources). The sampling area goes from <strong>Near Sample Radius</strong> to <strong>Far Sample Radius</strong>.</p>
+<ul>
+<li><strong>Facing Surfaces Only</strong> and <strong>Facing Tolerance</strong> - hits whose surface faces away from the sampled vertex (more than the tolerance angle) are ignored. Prevents picking weights from the other side of a thin gap, like the inner arm when sampling the torso.</li>
+</ul>
+</li>
+<li>
+<p><strong>Smooth Weights</strong>, <strong>Near Blur</strong>, <strong>Far Blur</strong> and <strong>Iterations</strong> - smooths sampled weights. Smoothing is adaptive: strength goes from Near Blur (blue vertices) to Far Blur (further verts), following the Blend Curve. This can remove tears in places like armpits and crotch areas, but if overused it may give ugly, rubbery deformations.</p>
+<ul>
+<li>
+<p><strong>Stitch Borders</strong> - smoothing does not cross from one loose piece of a garment to the other, which may result in them drifting apart. With this option on you can prevent that drift.
+<img alt="Border Stitches" src="img/no_border_stitches.jpg" />
+<em><code>Stitch Borders</code>: left - disabled, right - enabled</em></p>
+<ul>
+<li><strong>Stitch Count</strong> - How many vertices of other pieces a border vertex is stitched to (nearest first)</li>
+<li><strong>Stitch Range</strong> - How far a border vertex looks for vertices of other pieces to stitch to</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Use Pose</strong> - samples on the posed meshes (armature modifier only) instead of the rest shape: sample, pose the character, then sample again.
+<img alt="Sampling on posed character" src="img/sampling_on_posed_character.jpg" />
+<em>Use high smoothing to get roughly working weights for T-pose (left), then do second weights sampling pass on posed character - on right, to get the final, cleaner weights</em></p>
+</li>
+<li>
+<p><strong>All Groups</strong> - sample all vertex groups, or only the active one.</p>
+</li>
+</ul>
 <h3 id="override-from-adjacent">Override from adjacent<a class="headerlink" href="#override-from-adjacent" title="Permanent link">&para;</a></h3>
 <p><img alt="Create Group" src="img/override_from_adjacent.gif" />
 Override selected verts weights from adjacent non selected vertices. Helpful in removing broken vertices.</p>
